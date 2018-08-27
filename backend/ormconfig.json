@@ -1,0 +1,18 @@
+{
+  "type": "postgres",
+  "host": "167.99.152.16",
+  "port": 5432,
+  "username": "mapp",
+  "password": "Rivatuner00",
+  "database": "mapp",
+  "synchronize": true,
+  "logging": false,
+  "entities": ["src/entity/**/*.ts"],
+  "migrations": ["src/migration/**/*.ts"],
+  "subscribers": ["src/subscriber/**/*.ts"],
+  "cli": {
+    "entitiesDir": "src/entity",
+    "migrationsDir": "src/migration",
+    "subscribersDir": "src/subscriber"
+  }
+}

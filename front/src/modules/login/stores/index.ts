@@ -1,1 +1,1 @@
-export class LoginStore {}
+export { LoginStore } from './LoginStore';

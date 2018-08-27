@@ -1,21 +1,23 @@
-import { configure } from 'mobx';
-import { observer, Provider } from 'mobx-react';
-import * as React from 'react';
-import stores from './store';
+import { configure } from 'mobx'
+import { observer, Provider } from 'mobx-react'
+import { startRouter } from 'modules/app/router'
+import * as React from 'react'
+import { store } from './store'
 
-import 'normalize.css';
+import 'normalize.css'
 
-configure({ enforceActions: 'observed' });
+startRouter(store.view)
+configure({ enforceActions: 'observed' })
 
 @observer
 class App extends React.Component {
   public render() {
     return (
-      <Provider {...stores}>
+      <Provider {...store}>
         <div>test</div>
       </Provider>
-    );
+    )
   }
 }
 
-export default App;
+export default App

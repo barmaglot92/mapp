@@ -6,7 +6,7 @@ export class ViewStore {
   public currentView: {
     name: string;
     params?: { [key: string]: any };
-  } = { name: 'user' };
+  } = { name: '' };
 
   @observable
   public currentPath = '/';

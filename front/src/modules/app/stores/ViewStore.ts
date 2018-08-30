@@ -6,22 +6,23 @@ export class ViewStore {
   public currentView: {
     name: string;
     params?: { [key: string]: any };
-  } = { name: 'main' };
+  } = { name: 'user' };
 
   @observable
   public currentPath = '/';
 
   @action.bound
-  public showMain() {
+  public showLogin() {
     this.currentView = {
-      name: 'main',
+      name: 'login',
     };
   }
 
   @action.bound
-  public showLogin() {
+  public showUser(params: { userId: string }) {
     this.currentView = {
-      name: 'login',
+      name: 'user',
+      params,
     };
   }
 

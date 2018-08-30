@@ -1,8 +1,8 @@
 import { inject, observer } from 'mobx-react';
 import { LoginPage } from 'modules/login';
+import { UserPage } from 'modules/user';
 import * as React from 'react';
 import { IStore } from 'store';
-import { MainPage } from './MainPage';
 
 @inject('view')
 @observer
@@ -13,8 +13,8 @@ export class View extends React.Component<{
     const { currentView } = this.props.view!;
 
     switch (currentView.name) {
-      case 'main':
-        return <MainPage />;
+      case 'user':
+        return <UserPage />;
       case 'login':
         return <LoginPage />;
       default:

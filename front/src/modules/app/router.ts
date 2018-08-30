@@ -5,8 +5,8 @@ import { IStore } from 'store';
 export function startRouter(viewStore: IStore['view']) {
   // update state on url change
   viewStore.router = new Router({
-    '/': () => viewStore.showMain(),
     '/login': () => viewStore.showLogin(),
+    '/user/:userId': (userId: string) => viewStore.showUser({ userId }),
   })
     .configure({
       html5history: true,
